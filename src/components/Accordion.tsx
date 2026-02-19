@@ -14,11 +14,11 @@ export default function Accordion({ title, children, defaultOpen = false }: Acco
   return (
     <div className="accordion-item">
       <div
-        className={`accordion-header ${isOpen ? "open" : ""}`}
+        className="accordion-header"
         onClick={() => setIsOpen(!isOpen)}
       >
+        <span className="toggle-icon">{isOpen ? "−" : "+"}</span>
         <span>{title}</span>
-        <span className="arrow">&#9660;</span>
       </div>
       {isOpen && <div className="accordion-body">{children}</div>}
     </div>
