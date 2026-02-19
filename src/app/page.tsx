@@ -13,28 +13,28 @@ export default function Home() {
         <div className="wrapper">
           <div className="header-inner">
             <div className="header-logo">
-              <svg viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="20" cy="25" rx="18" ry="23" fill="#c9a84e"/>
-                <ellipse cx="20" cy="25" rx="14" ry="18" fill="#9b2335"/>
-                <path d="M14 20l6-4 6 4v8l-6 5-6-5v-8z" fill="#c9a84e" opacity="0.9"/>
+              <svg viewBox="0 0 36 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="18" cy="22" rx="16" ry="20" fill="#c9a84e"/>
+                <ellipse cx="18" cy="22" rx="12" ry="15" fill="#9b2335"/>
+                <path d="M12 18l6-4 6 4v7l-6 5-6-5v-7z" fill="#c9a84e" opacity="0.9"/>
               </svg>
               <div className="header-logo-name">ФОНД АЛЕКСЕЯ<br/>СОЛАНОВА</div>
             </div>
-            <div className="header-nav">
+            <nav className="header-nav">
               <a href="#">Фонд</a>
               <a href="#" className="active">Деятельность</a>
               <a href="#">Документы</a>
               <a href="#">Обращения</a>
               <a href="#">Контакты</a>
               <a href="#">Пресс-центр</a>
-            </div>
+            </nav>
             <div className="header-right">
               <span className="lang">En</span>
               <span className="icon-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
               </span>
               <span className="icon-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12a11 11 0 1 0 22 0 11 11 0 0 0-22 0"/><path d="M12 1a15 15 0 0 1 4 11 15 15 0 0 1-4 11"/><path d="M12 1a15 15 0 0 0-4 11 15 15 0 0 0 4 11"/><path d="M1 12h22"/></svg>
               </span>
               <span className="icon-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -53,21 +53,24 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ===== MAIN ===== */}
+      {/* ===== TOP SECTION: full-width title + description ===== */}
       <div className="wrapper">
         <div className="section-label">Деятельность</div>
         <h1 className="page-title">Фонд Алексея Соланова</h1>
+        <p className="page-desc">
+          <b>Фонд Алексея Соланова</b> представляет собой часть средств федерального бюджета,
+          подлежащих обособленному учёту и управлению в целях обеспечения софинансирования
+          добровольных пенсионных накоплений граждан Российской Федерации, а также обеспечения
+          сбалансированности (покрытия дефицита) федерального бюджета и бюджета Пенсионного фонда
+          Российской Федерации
+        </p>
+      </div>
 
+      {/* ===== TWO-COLUMN: tabs+content | sidebar ===== */}
+      <div className="wrapper">
         <div style={{ display: "flex", gap: 48 }}>
-          {/* === LEFT === */}
+          {/* === LEFT: tabs & content === */}
           <div style={{ flex: 1, minWidth: 0 }}>
-            <p className="page-desc">
-              <b>Фонд Алексея Соланова</b> представляет собой часть средств федерального бюджета,
-              подлежащих обособленному учёту и управлению в целях обеспечения софинансирования
-              добровольных пенсионных накоплений граждан Российской Федерации, а также обеспечения
-              сбалансированности (покрытия дефицита) федерального бюджета.
-            </p>
-
             <Tabs tabs={["О Фонде", "Нормативные правовые акты", "Статистика и отчётность", "Информационные сообщения"]}>
               {/* Tab 1: О Фонде */}
               <div>
@@ -206,9 +209,9 @@ export default function Home() {
 
             <div className="side-links">
               <h4>Контакты</h4>
-              <div style={{ fontSize: 13, color: "#666", lineHeight: 1.7 }}>
-                <p style={{ marginBottom: 4 }}>109097, г. Москва, ул. Ильинка, д. 9</p>
-                <p style={{ marginBottom: 4 }}>+7 (495) 987-65-43</p>
+              <div className="side-contact">
+                <p>109097, г. Москва, ул. Ильинка, д. 9</p>
+                <p>+7 (495) 987-65-43</p>
                 <p>info@fond-solanova.ru</p>
               </div>
             </div>
