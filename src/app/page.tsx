@@ -2,10 +2,10 @@ import Accordion from "@/components/Accordion";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}>
       {/* ===== TOP BAR ===== */}
       <div className="top-bar">
-        <div className="max-w-[1200px] mx-auto px-5 w-full flex justify-between items-center">
+        <div className="wrapper flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span>Официальный сайт</span>
             <a href="#">Карта сайта</a>
@@ -22,7 +22,7 @@ export default function Home() {
 
       {/* ===== HEADER ===== */}
       <div className="header-main">
-        <div className="max-w-[1200px] mx-auto px-5 flex items-center gap-5">
+        <div className="wrapper flex items-center gap-5">
           {/* Coat of arms */}
           <div className="flex-shrink-0">
             <svg viewBox="0 0 52 64" width="52" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +56,7 @@ export default function Home() {
 
       {/* ===== NAVIGATION ===== */}
       <nav className="main-nav">
-        <div className="max-w-[1200px] mx-auto px-5 flex">
+        <div className="wrapper flex">
           <a href="#">Фонд</a>
           <a href="#" className="active">Деятельность</a>
           <a href="#">Документы</a>
@@ -67,7 +67,7 @@ export default function Home() {
       </nav>
 
       {/* ===== BREADCRUMBS ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 w-full">
+      <div className="wrapper">
         <div className="breadcrumbs">
           <a href="#">Главная</a>
           <span className="sep">/</span>
@@ -78,12 +78,12 @@ export default function Home() {
       </div>
 
       {/* ===== MAIN CONTENT ===== */}
-      <div className="max-w-[1200px] mx-auto px-5 w-full flex-1 pb-8">
+      <div className="wrapper" style={{ flex: 1, paddingBottom: 32 }}>
         <h1 className="page-title">Фонд Алексея Соланова</h1>
 
-        <div className="flex gap-5 flex-col lg:flex-row">
+        <div style={{ display: "flex", gap: 20, flexDirection: "row" }}>
           {/* ===== LEFT COLUMN ===== */}
-          <div className="flex-1 min-w-0">
+          <div style={{ flex: 1, minWidth: 0 }}>
             {/* Description card */}
             <div className="content-card">
               <p className="page-description" style={{ marginBottom: 0 }}>
@@ -343,7 +343,7 @@ export default function Home() {
           </div>
 
           {/* ===== RIGHT SIDEBAR ===== */}
-          <aside className="w-full lg:w-[340px] flex-shrink-0">
+          <aside style={{ width: 340, flexShrink: 0 }}>
             {/* Stat card */}
             <div className="stat-card">
               <div className="stat-label">Объём Фонда Алексея Соланова</div>
@@ -386,10 +386,10 @@ export default function Home() {
 
       {/* ===== FOOTER ===== */}
       <footer className="footer">
-        <div className="max-w-[1200px] mx-auto px-5">
-          <div className="flex gap-12 flex-col lg:flex-row">
+        <div className="wrapper">
+          <div style={{ display: "flex", gap: 48 }}>
             {/* Logo & description */}
-            <div className="lg:w-[320px] flex-shrink-0">
+            <div style={{ width: 320, flexShrink: 0 }}>
               <div className="flex items-center gap-4 mb-5">
                 <svg viewBox="0 0 44 54" width="44" height="54" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M22 1L2 10v17c0 14 20 25 20 25s20-11 20-25V10L22 1z" fill="#c8a84e" stroke="#9e7e2e" strokeWidth="1"/>
@@ -408,7 +408,7 @@ export default function Home() {
             </div>
 
             {/* Links columns */}
-            <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div style={{ flex: 1, display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 32 }}>
               <div>
                 <div className="footer-heading">О Фонде</div>
                 <div className="flex flex-col">
@@ -441,7 +441,7 @@ export default function Home() {
         </div>
 
         <div className="footer-bottom">
-          <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-2">
+          <div className="wrapper" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <span>&copy; 2026 Фонд Алексея Соланова. Все права защищены.</span>
             <span>Информация на сайте носит справочный характер</span>
           </div>

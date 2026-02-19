@@ -12,6 +12,15 @@
   box-sizing: border-box;
 }
 
+.wrapper {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
 body {
   background: #eceef1;
   color: #000;
