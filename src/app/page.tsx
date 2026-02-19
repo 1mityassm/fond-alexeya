@@ -31,10 +31,10 @@ export default function Home() {
             <div className="header-right">
               <span className="lang">En</span>
               <span className="icon-btn">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
               </span>
               <span className="icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M1 12a11 11 0 1 0 22 0 11 11 0 0 0-22 0"/><path d="M12 1a15 15 0 0 1 4 11 15 15 0 0 1-4 11"/><path d="M12 1a15 15 0 0 0-4 11 15 15 0 0 0 4 11"/><path d="M1 12h22"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
               </span>
               <span className="icon-btn">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
@@ -44,178 +44,182 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ===== BREADCRUMBS ===== */}
-      <div className="wrapper">
-        <div className="breadcrumbs">
-          <a href="#">Главная</a><span className="sep">/</span>
-          <a href="#">Деятельность</a><span className="sep">/</span>
-          <span>Фонд Алексея Соланова</span>
+      {/* ===== HERO SECTION (gray background) ===== */}
+      <div className="hero-section">
+        <div className="wrapper">
+          <div className="breadcrumbs">
+            <a href="#">Главная</a><span className="sep">/</span>
+            <a href="#">Деятельность</a><span className="sep">/</span>
+            <span>Фонд Алексея Соланова</span>
+          </div>
+          <div className="section-label">Деятельность</div>
+          <h1 className="page-title">Фонд Алексея Соланова</h1>
+          <p className="page-desc">
+            <b>Фонд Алексея Соланова</b> представляет собой часть средств федерального бюджета,
+            подлежащих обособленному учёту и управлению в целях обеспечения софинансирования
+            добровольных пенсионных накоплений граждан Российской Федерации, а также обеспечения
+            сбалансированности (покрытия дефицита) федерального бюджета и бюджета Пенсионного фонда
+            Российской Федерации
+          </p>
         </div>
       </div>
 
-      {/* ===== TOP SECTION: full-width title + description ===== */}
-      <div className="wrapper">
-        <div className="section-label">Деятельность</div>
-        <h1 className="page-title">Фонд Алексея Соланова</h1>
-        <p className="page-desc">
-          <b>Фонд Алексея Соланова</b> представляет собой часть средств федерального бюджета,
-          подлежащих обособленному учёту и управлению в целях обеспечения софинансирования
-          добровольных пенсионных накоплений граждан Российской Федерации, а также обеспечения
-          сбалансированности (покрытия дефицита) федерального бюджета и бюджета Пенсионного фонда
-          Российской Федерации
-        </p>
-      </div>
+      {/* ===== CONTENT: tabs+content | sidebar (white background) ===== */}
+      <div className="content-area">
+        <div className="wrapper">
+          <div style={{ display: "flex", gap: 48 }}>
+            {/* === LEFT: tabs & content === */}
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <Tabs tabs={["О Фонде", "Нормативные правовые акты", "Статистика и отчётность", "Информационные сообщения"]}>
+                {/* Tab 1: О Фонде */}
+                <div>
+                  <h2 className="tab-section-title">О Фонде</h2>
+                  <Accordion title="Что такое Фонд Алексея Соланова и для чего он создан?">
+                    <p>Фонд Алексея Соланова — специализированный финансовый институт, созданный для обеспечения долгосрочной финансовой стабильности.</p>
+                    <p>Учреждён в 2008 году на базе Стабилизационного фонда Российской Федерации (действовавшего с 2004 года).</p>
+                    <p>Основные цели:</p>
+                    <ul>
+                      <li>Софинансирование добровольных пенсионных накоплений граждан</li>
+                      <li>Обеспечение сбалансированности федерального бюджета</li>
+                      <li>Поддержка стратегических проектов развития</li>
+                    </ul>
+                  </Accordion>
+                  <Accordion title="Из чего формируются доходы Фонда?">
+                    <p>Доходы формируются за счёт:</p>
+                    <ul>
+                      <li>Налога на добычу полезных ископаемых (нефть, газ)</li>
+                      <li>Вывозных таможенных пошлин на нефть и газ</li>
+                      <li>Доходов от управления средствами Фонда</li>
+                    </ul>
+                  </Accordion>
+                  <Accordion title="Как осуществляется управление средствами Фонда?">
+                    <p>Управление осуществляется Управляющим советом при координации с Правлением Фонда. Цели — обеспечение сохранности средств и стабильного уровня доходности.</p>
+                  </Accordion>
+                  <Accordion title="Во что могут размещаться средства Фонда?">
+                    <ul>
+                      <li>Иностранная валюта</li>
+                      <li>Монетарное золото в обезличенной форме</li>
+                      <li>Долговые обязательства иностранных государств</li>
+                      <li>Депозиты и остатки на счетах в банках и ЦБ</li>
+                      <li>Депозиты и ценные бумаги ВЭБ.РФ</li>
+                      <li>Акции и облигации российских юрлиц</li>
+                      <li>Паи инвестиционных фондов</li>
+                    </ul>
+                  </Accordion>
+                </div>
 
-      {/* ===== TWO-COLUMN: tabs+content | sidebar ===== */}
-      <div className="wrapper">
-        <div style={{ display: "flex", gap: 48 }}>
-          {/* === LEFT: tabs & content === */}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <Tabs tabs={["О Фонде", "Нормативные правовые акты", "Статистика и отчётность", "Информационные сообщения"]}>
-              {/* Tab 1: О Фонде */}
-              <div>
-                <Accordion title="Что такое Фонд Алексея Соланова и для чего он создан?">
-                  <p>Фонд Алексея Соланова — специализированный финансовый институт, созданный для обеспечения долгосрочной финансовой стабильности.</p>
-                  <p>Учреждён в 2008 году на базе Стабилизационного фонда Российской Федерации (действовавшего с 2004 года).</p>
-                  <p>Основные цели:</p>
-                  <ul>
-                    <li>Софинансирование добровольных пенсионных накоплений граждан</li>
-                    <li>Обеспечение сбалансированности федерального бюджета</li>
-                    <li>Поддержка стратегических проектов развития</li>
-                  </ul>
-                </Accordion>
-                <Accordion title="Из чего формируются доходы Фонда?">
-                  <p>Доходы формируются за счёт:</p>
-                  <ul>
-                    <li>Налога на добычу полезных ископаемых (нефть, газ)</li>
-                    <li>Вывозных таможенных пошлин на нефть и газ</li>
-                    <li>Доходов от управления средствами Фонда</li>
-                  </ul>
-                </Accordion>
-                <Accordion title="Как осуществляется управление средствами Фонда?">
-                  <p>Управление осуществляется Управляющим советом при координации с Правлением Фонда. Цели — обеспечение сохранности средств и стабильного уровня доходности.</p>
-                </Accordion>
-                <Accordion title="Во что могут размещаться средства Фонда?">
-                  <ul>
-                    <li>Иностранная валюта</li>
-                    <li>Монетарное золото в обезличенной форме</li>
-                    <li>Долговые обязательства иностранных государств</li>
-                    <li>Депозиты и остатки на счетах в банках и ЦБ</li>
-                    <li>Депозиты и ценные бумаги ВЭБ.РФ</li>
-                    <li>Акции и облигации российских юрлиц</li>
-                    <li>Паи инвестиционных фондов</li>
-                  </ul>
-                </Accordion>
+                {/* Tab 2: Нормативные акты */}
+                <div>
+                  <h2 className="tab-section-title">Нормативные правовые акты</h2>
+                  <div className="doc-row">
+                    <span className="doc-icon-sm"><SmDoc /></span>
+                    <div><a href="#">Статьи 96.10–96.11 Бюджетного кодекса РФ</a><div className="doc-sub">Основные нормы о Фонде</div></div>
+                  </div>
+                  <div className="doc-row">
+                    <span className="doc-icon-sm"><SmDoc /></span>
+                    <div><a href="#">Постановление Правительства РФ от 19.01.2008 № 18</a><div className="doc-sub">Порядок управления средствами</div></div>
+                  </div>
+                  <div className="doc-row">
+                    <span className="doc-icon-sm"><SmDoc /></span>
+                    <div><a href="#">Постановление Правительства РФ от 19.01.2008 № 24</a><div className="doc-sub">Требования к финансовым активам</div></div>
+                  </div>
+                </div>
+
+                {/* Tab 3: Статистика */}
+                <div>
+                  <h2 className="tab-section-title">Статистика и отчётность</h2>
+                  <table className="tbl">
+                    <thead><tr><th>Дата</th><th>Объём (млрд ₽)</th><th>Изм.</th><th>Опубл.</th></tr></thead>
+                    <tbody>
+                      <tr><td>01.02.2026</td><td style={{fontWeight:600}}>13 639,25</td><td style={{color:"#2e7d32"}}>+2,4%</td><td style={{color:"#aaa"}}>18.02.2026</td></tr>
+                      <tr><td>01.01.2026</td><td style={{fontWeight:600}}>13 319,84</td><td style={{color:"#2e7d32"}}>+1,8%</td><td style={{color:"#aaa"}}>15.01.2026</td></tr>
+                      <tr><td>01.12.2025</td><td style={{fontWeight:600}}>13 083,72</td><td style={{color:"#2e7d32"}}>+0,9%</td><td style={{color:"#aaa"}}>17.12.2025</td></tr>
+                      <tr><td>01.11.2025</td><td style={{fontWeight:600}}>12 966,14</td><td style={{color:"#c62828"}}>−0,3%</td><td style={{color:"#aaa"}}>18.11.2025</td></tr>
+                      <tr><td>01.10.2025</td><td style={{fontWeight:600}}>13 005,02</td><td style={{color:"#2e7d32"}}>+1,1%</td><td style={{color:"#aaa"}}>16.10.2025</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Tab 4: Информационные сообщения */}
+                <div>
+                  <h2 className="tab-section-title">Информационные сообщения</h2>
+                  <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Информационное сообщение о размещении средств Фонда</a><div className="doc-sub">06.02.2026</div></div></div>
+                  <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за январь 2026</a><div className="doc-sub">22.01.2026</div></div></div>
+                  <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за декабрь 2025</a><div className="doc-sub">18.12.2025</div></div></div>
+                  <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за ноябрь 2025</a><div className="doc-sub">20.11.2025</div></div></div>
+                </div>
+              </Tabs>
+
+              {/* ===== НОВОСТИ ПО ТЕМЕ ===== */}
+              <hr className="divider" />
+              <h2 className="section-title">Новости по теме</h2>
+
+              <div className="news-grid">
+                <div>
+                  <div className="news-img-box">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  </div>
+                  <div className="news-item-date">14.02.2026</div>
+                  <a href="#" className="news-item-title">Объём Фонда Алексея Соланова по итогам января 2026 года превысил 13,6 трлн рублей</a>
+                </div>
+                <div>
+                  <div className="news-img-box">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+                  </div>
+                  <div className="news-item-date">07.02.2026</div>
+                  <a href="#" className="news-item-title">Управляющий совет утвердил новую инвестиционную стратегию Фонда на 2026–2028 годы</a>
+                </div>
               </div>
 
-              {/* Tab 2: Нормативные акты */}
-              <div>
-                <div className="doc-row">
-                  <span className="doc-icon-sm"><SmDoc /></span>
-                  <div><a href="#">Статьи 96.10–96.11 Бюджетного кодекса РФ</a><div className="doc-sub">Основные нормы о Фонде</div></div>
-                </div>
-                <div className="doc-row">
-                  <span className="doc-icon-sm"><SmDoc /></span>
-                  <div><a href="#">Постановление Правительства РФ от 19.01.2008 № 18</a><div className="doc-sub">Порядок управления средствами</div></div>
-                </div>
-                <div className="doc-row">
-                  <span className="doc-icon-sm"><SmDoc /></span>
-                  <div><a href="#">Постановление Правительства РФ от 19.01.2008 № 24</a><div className="doc-sub">Требования к финансовым активам</div></div>
-                </div>
+              <div className="news-list-item">
+                <span className="news-list-date">28.01.2026</span>
+                <a href="#" className="news-list-title">Опубликованы итоги управления средствами Фонда Алексея Соланова за 2025 год</a>
               </div>
-
-              {/* Tab 3: Статистика */}
-              <div>
-                <table className="tbl">
-                  <thead><tr><th>Дата</th><th>Объём (млрд ₽)</th><th>Изм.</th><th>Опубл.</th></tr></thead>
-                  <tbody>
-                    <tr><td>01.02.2026</td><td style={{fontWeight:600}}>13 639,25</td><td style={{color:"#2e7d32"}}>+2,4%</td><td style={{color:"#aaa"}}>18.02.2026</td></tr>
-                    <tr><td>01.01.2026</td><td style={{fontWeight:600}}>13 319,84</td><td style={{color:"#2e7d32"}}>+1,8%</td><td style={{color:"#aaa"}}>15.01.2026</td></tr>
-                    <tr><td>01.12.2025</td><td style={{fontWeight:600}}>13 083,72</td><td style={{color:"#2e7d32"}}>+0,9%</td><td style={{color:"#aaa"}}>17.12.2025</td></tr>
-                    <tr><td>01.11.2025</td><td style={{fontWeight:600}}>12 966,14</td><td style={{color:"#c62828"}}>−0,3%</td><td style={{color:"#aaa"}}>18.11.2025</td></tr>
-                    <tr><td>01.10.2025</td><td style={{fontWeight:600}}>13 005,02</td><td style={{color:"#2e7d32"}}>+1,1%</td><td style={{color:"#aaa"}}>16.10.2025</td></tr>
-                  </tbody>
-                </table>
+              <div className="news-list-item">
+                <span className="news-list-date">15.01.2026</span>
+                <a href="#" className="news-list-title">Фонд увеличил долю инвестиций в золото до 10% портфеля</a>
               </div>
-
-              {/* Tab 4: Информационные сообщения */}
-              <div>
-                <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Информационное сообщение о размещении средств Фонда</a><div className="doc-sub">06.02.2026</div></div></div>
-                <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за январь 2026</a><div className="doc-sub">22.01.2026</div></div></div>
-                <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за декабрь 2025</a><div className="doc-sub">18.12.2025</div></div></div>
-                <div className="doc-row"><span className="doc-icon-sm"><SmDoc /></span><div><a href="#">Сведения о результатах размещения за ноябрь 2025</a><div className="doc-sub">20.11.2025</div></div></div>
-              </div>
-            </Tabs>
-
-            {/* ===== НОВОСТИ ПО ТЕМЕ ===== */}
-            <hr className="divider" />
-            <h2 className="section-title">Новости по теме</h2>
-
-            <div className="news-grid">
-              <div>
-                <div className="news-img-box">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-                </div>
-                <div className="news-item-date">14.02.2026</div>
-                <a href="#" className="news-item-title">Объём Фонда Алексея Соланова по итогам января 2026 года превысил 13,6 трлн рублей</a>
-              </div>
-              <div>
-                <div className="news-img-box">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-                </div>
-                <div className="news-item-date">07.02.2026</div>
-                <a href="#" className="news-item-title">Управляющий совет утвердил новую инвестиционную стратегию Фонда на 2026–2028 годы</a>
+              <div className="news-list-item">
+                <span className="news-list-date">10.01.2026</span>
+                <a href="#" className="news-list-title">Правление Фонда провело заседание по итогам IV квартала 2025 года</a>
               </div>
             </div>
 
-            <div className="news-list-item">
-              <span className="news-list-date">28.01.2026</span>
-              <a href="#" className="news-list-title">Опубликованы итоги управления средствами Фонда Алексея Соланова за 2025 год</a>
-            </div>
-            <div className="news-list-item">
-              <span className="news-list-date">15.01.2026</span>
-              <a href="#" className="news-list-title">Фонд увеличил долю инвестиций в золото до 10% портфеля</a>
-            </div>
-            <div className="news-list-item">
-              <span className="news-list-date">10.01.2026</span>
-              <a href="#" className="news-list-title">Правление Фонда провело заседание по итогам IV квартала 2025 года</a>
-            </div>
+            {/* === RIGHT SIDEBAR === */}
+            <aside style={{ width: 300, flexShrink: 0 }}>
+              <div className="stat-block">
+                <div className="stat-title">Объём Фонда<br/>Алексея Соланова</div>
+                <div className="stat-date">по состоянию на 1 февраля 2026 года</div>
+                <div><span className="stat-number">13 639,25</span><span className="stat-unit-inline"> млрд ₽</span></div>
+              </div>
+
+              <div className="side-links">
+                <h4>Разделы</h4>
+                <a href="#" className="side-link">О Фонде</a>
+                <a href="#" className="side-link">Нормативная база</a>
+                <a href="#" className="side-link">Статистика и отчётность</a>
+                <a href="#" className="side-link">Информационные сообщения</a>
+                <a href="#" className="side-link">Структура размещения</a>
+              </div>
+
+              <div className="side-links">
+                <h4>Последние документы</h4>
+                <a href="#" className="side-link">Данные об объёме Фонда на 01.02.2026</a>
+                <a href="#" className="side-link">Сведения о размещении средств (06.02.2026)</a>
+                <a href="#" className="side-link">Квартальный отчёт за IV кв. 2025</a>
+                <a href="#" className="side-link">Годовой отчёт за 2024 год</a>
+              </div>
+
+              <div className="side-links">
+                <h4>Контакты</h4>
+                <div className="side-contact">
+                  <p>109097, г. Москва, ул. Ильинка, д. 9</p>
+                  <p>+7 (495) 987-65-43</p>
+                  <p>info@fond-solanova.ru</p>
+                </div>
+              </div>
+            </aside>
           </div>
-
-          {/* === RIGHT SIDEBAR === */}
-          <aside style={{ width: 300, flexShrink: 0 }}>
-            <div className="stat-block">
-              <div className="stat-title">Объём Фонда<br/>Алексея Соланова</div>
-              <div className="stat-date">по состоянию на 1 февраля 2026 года</div>
-              <div><span className="stat-number">13 639,25</span><span className="stat-unit-inline"> млрд ₽</span></div>
-            </div>
-
-            <div className="side-links">
-              <h4>Разделы</h4>
-              <a href="#" className="side-link">О Фонде</a>
-              <a href="#" className="side-link">Нормативная база</a>
-              <a href="#" className="side-link">Статистика и отчётность</a>
-              <a href="#" className="side-link">Информационные сообщения</a>
-              <a href="#" className="side-link">Структура размещения</a>
-            </div>
-
-            <div className="side-links">
-              <h4>Последние документы</h4>
-              <a href="#" className="side-link">Данные об объёме Фонда на 01.02.2026</a>
-              <a href="#" className="side-link">Сведения о размещении средств (06.02.2026)</a>
-              <a href="#" className="side-link">Квартальный отчёт за IV кв. 2025</a>
-              <a href="#" className="side-link">Годовой отчёт за 2024 год</a>
-            </div>
-
-            <div className="side-links">
-              <h4>Контакты</h4>
-              <div className="side-contact">
-                <p>109097, г. Москва, ул. Ильинка, д. 9</p>
-                <p>+7 (495) 987-65-43</p>
-                <p>info@fond-solanova.ru</p>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
 
