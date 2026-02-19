@@ -180,11 +180,11 @@ export default function Home() {
           </div>
 
           {/* === RIGHT SIDEBAR === */}
-          <aside style={{ width: 280, flexShrink: 0 }}>
+          <aside style={{ width: 300, flexShrink: 0 }}>
             <div className="stat-block">
-              <div className="stat-label">Объём Фонда Алексея Соланова</div>
-              <div><span className="stat-value">13 639,25</span> <span className="stat-unit">млрд ₽</span></div>
+              <div className="stat-title">Объём Фонда<br/>Алексея Соланова</div>
               <div className="stat-date">по состоянию на 1 февраля 2026 года</div>
+              <div><span className="stat-number">13 639,25</span><span className="stat-unit-inline"> млрд ₽</span></div>
             </div>
 
             <div className="side-links">
